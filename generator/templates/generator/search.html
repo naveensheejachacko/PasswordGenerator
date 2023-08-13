@@ -1,0 +1,18 @@
+{% extends 'generator/base.html'%}
+{% block content %}
+    <h1>Welcome django password generator</h1>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            site<input type="text" name="site">
+            <input type="submit">
+        </form>
+    </div>
+    <div>
+        {% for data in results %}
+            <h1>{{data.site}}</h1>
+            <h1>{{ data.time }}</h1>
+            <h1>{{ data.passwords}}</h1>
+        {% endfor %}
+    </div>
+{% endblock content %}

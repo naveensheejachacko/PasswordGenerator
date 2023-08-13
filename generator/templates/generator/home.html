@@ -1,0 +1,15 @@
+{% extends 'generator/base.html' %}
+{% include 'generator/search.html' %}
+{% block content %}
+
+<h1>Welcome Pssword Generator</h1>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        site<input type="text" name="site">
+        lenght<input type="text" name="length" placeholder="enter length of password">
+        <input type="submit">
+    </form>
+</div>
+
+{% endblock %}
